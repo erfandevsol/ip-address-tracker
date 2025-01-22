@@ -1,4 +1,4 @@
-import QueryClientProvider from "@/QueryClientProvider";
+import QueryClientProvider from "@/queryClientProvider";
 import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 
