@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Rubik } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
-import SearchForm from "@/components/tracker/searchForm";
+import SearchForm from "@/components/tracker/SearchForm";
+import IPDetails from "@/components/tracker/IpDetails";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -33,7 +34,7 @@ export default function Home() {
           <h1>IP Address Tracker</h1>
 
           <SearchForm onSubmit={handleSearch} />
-          {query && <p>Searching for: {query}</p>}
+          {query && <IPDetails query={query}/>}
         </main>
       </div>
     </>
