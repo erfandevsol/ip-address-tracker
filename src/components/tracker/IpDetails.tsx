@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
-import { fetchIPDetails } from "@/utils/api";
+import { fetchIPDetails } from "@/utils/apiFetch";
+import Map from "./Map";
+import { Card, CardContent, Typography, Box } from "@mui/material";
 
 export default function IPDetails({ query }: { query: string }) {
   const { data, error, isLoading } = useQuery(
@@ -7,6 +9,7 @@ export default function IPDetails({ query }: { query: string }) {
     () => fetchIPDetails(query),
     {
       enabled: !!query,
+      staleTime: 60000,
     }
   );
 
@@ -14,20 +17,35 @@ export default function IPDetails({ query }: { query: string }) {
   if (error) return <p>Error: {(error as Error).message}</p>;
 
   return (
-    <div>
-      <h2>IP Details</h2>
-      <p>
-        <strong>IP Address:</strong> {data.ip}
-      </p>
-      <p>
-        <strong>Location:</strong> {data.location.city}, {data.location.country}
-      </p>
-      <p>
-        <strong>Time Zone:</strong> {data.location.timezone}
-      </p>
-      <p>
-        <strong>ISP:</strong> {data.isp}
-      </p>
-    </div>
+    <Box>
+      <Card
+        sx={{
+          marginBottom: 4,
+          padding: 2,
+          borderRadius: "8px",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+        }}
+      >
+        <CardContent>
+          <Typography variant="h6">
+            <strong>IP Address:</strong> {data.ip}
+          </Typography>
+          <Typography variant="h6">
+            <strong>Location:</strong> {data.location.city},{" "}
+            {data.location.country}
+          </Typography>
+          <Typography variant="h6">
+            <strong>Time Zone:</strong> {data.location.timezone}
+          </Typography>
+          <Typography variant="h6">
+            <strong>ISP:</strong> {data.isp}
+          </Typography>
+        </CardContent>
+      </Card>
+
+      <div className="map">
+        <Map lat={data.location.lat} lng={data.location.lng} />
+      </div>
+    </Box>
   );
 }

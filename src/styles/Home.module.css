@@ -1,10 +1,9 @@
 .page {
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
   padding: 80px;
   gap: 64px;
+  width: 100%;
   font-family: var(--font-rubik-sans);
 }

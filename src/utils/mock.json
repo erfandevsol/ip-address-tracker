@@ -1,0 +1,9 @@
+{
+  "ip": "8.8.8.8",
+  "location": {
+    "city": "Mountain View",
+    "country": "US",
+    "timezone": "-08:00"
+  },
+  "isp": "Google LLC"
+}

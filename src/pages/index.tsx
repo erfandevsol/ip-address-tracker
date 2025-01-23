@@ -1,9 +1,12 @@
 import Head from "next/head";
 import { Rubik } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchForm from "@/components/tracker/SearchForm";
 import IPDetails from "@/components/tracker/IpDetails";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { fetchUserIP } from "@/utils/apiFetch";
+import { Container, Typography } from "@mui/material";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -13,11 +16,23 @@ const rubikSans = Rubik({
 });
 
 export default function Home() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string | null>(null);
+
+  useEffect(() => {
+    const getUserIP = async () => {
+      try {
+        const { ip } = await fetchUserIP();
+        setQuery(ip);
+      } catch (error) {
+        console.error("Failed to fetch user IP:", error);
+      }
+    };
+
+    getUserIP();
+  }, []);
 
   const handleSearch = (newQuery: string) => {
     setQuery(newQuery);
-    console.log("Searching for:", newQuery); // بعداً به API وصل می‌کنیم
   };
 
   return (
@@ -29,14 +44,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.page} ${rubikSans.variable}`}>
-        <main>
-          <h1>IP Address Tracker</h1>
+      <Container className={`${styles.page} ${rubikSans.variable}`}>
+        <Typography variant="h4" textAlign="center" gutterBottom>
+          IP Address Tracker
+        </Typography>
 
-          <SearchForm onSubmit={handleSearch} />
-          {query && <IPDetails query={query}/>}
-        </main>
-      </div>
+        <SearchForm onSubmit={handleSearch} />
+        {query && <IPDetails query={query} />}
+      </Container>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-import { TextField, Button, Box } from "@mui/material";
+import { TextField, Button, Box, InputAdornment } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 
 type FormValues = {
   query: string;
@@ -20,15 +21,33 @@ export default function SearchForm({
     <Box
       component="form"
       onSubmit={handleSubmit(handleFormSubmit)}
-      sx={{ display: "flex", gap: 2, alignItems: "center", marginBottom: 4 }}
+      sx={{
+        display: "flex",
+        gap: 2,
+        alignItems: "center",
+        flexDirection: { xs: "column", sm: "row" },
+        marginBottom: 4,
+      }}
     >
       <TextField
         {...register("query", { required: true })}
-        label="Enter IP or Domain"
+        label="Search IP or Domain"
         variant="outlined"
         fullWidth
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
       />
-      <Button type="submit" variant="contained" color="primary">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ width: { xs: "100%", sm: "auto" } }}
+      >
         Search
       </Button>
     </Box>
