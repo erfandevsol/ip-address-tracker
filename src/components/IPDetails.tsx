@@ -24,6 +24,8 @@ export default function IPDetails({ query }: { query: string }) {
           padding: 2,
           borderRadius: "8px",
           boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+          position: "absolute",
+          zIndex: "1",
         }}
       >
         <CardContent>
@@ -43,9 +45,7 @@ export default function IPDetails({ query }: { query: string }) {
         </CardContent>
       </Card>
 
-      <div className="map">
-        <Map lat={data.location.lat} lng={data.location.lng} />
-      </div>
+      <Map lat={data.location.lat} lng={data.location.lng} />
     </Box>
   );
 }

@@ -2,11 +2,11 @@ import Head from "next/head";
 import { Rubik } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
-import SearchForm from "@/components/tracker/SearchForm";
-import IPDetails from "@/components/tracker/IpDetails";
+import SearchForm from "@/components/SearchSection";
+import IPDetails from "@/components/IPDetails";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { fetchUserIP } from "@/utils/apiFetch";
-import { Container, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -44,14 +44,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container className={`${styles.page} ${rubikSans.variable}`}>
-        <Typography variant="h4" textAlign="center" gutterBottom>
-          IP Address Tracker
-        </Typography>
+      <main className={`${rubikSans.className}`}>
+        <Box
+          sx={{ display: "grid", gridTemplateRows: "1fr 2fr", height: "100vh" }}
+        >
+          <Box sx={{ gridRow: "1" }}>
+            <SearchForm onSubmit={handleSearch} />
+          </Box>
 
-        <SearchForm onSubmit={handleSearch} />
-        {query && <IPDetails query={query} />}
-      </Container>
+          <Box sx={{ gridRow: "2/4" }}>
+            {query && <IPDetails query={query} />}
+          </Box>
+        </Box>
+      </main>
     </>
   );
 }
