@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Rubik } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import SearchForm from "@/components/SearchSection";
 import IPDetails from "@/components/IPDetails";
@@ -46,7 +45,11 @@ export default function Home() {
 
       <main className={`${rubikSans.className}`}>
         <Box
-          sx={{ display: "grid", gridTemplateRows: "1fr 2fr", height: "100vh" }}
+          sx={{
+            display: "grid",
+            gridTemplateRows: "1fr 2fr",
+            height: "100vh",
+          }}
         >
           <Box sx={{ gridRow: "1" }}>
             <SearchForm onSubmit={handleSearch} />

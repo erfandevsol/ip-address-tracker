@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { fetchIPDetails } from "@/utils/apiFetch";
-import Map from "./Map";
+import Map from "./MapContainer";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 
 export default function IPDetails({ query }: { query: string }) {
