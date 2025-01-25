@@ -49,6 +49,7 @@ export default function Home() {
             display: "grid",
             gridTemplateRows: "1fr 2fr",
             height: "100vh",
+            overflow: "hidden",
           }}
         >
           <Box sx={{ gridRow: "1" }}>

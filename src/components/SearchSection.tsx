@@ -37,7 +37,7 @@ export default function SearchForm({
         position: "relative",
       }}
     >
-      <Box textAlign="center" sx={{ maxWidth: "600px", width: "100%" }}>
+      <Box textAlign="center" sx={{ maxWidth: "600px", width: "100%", marginBottom:"60px" }}>
         <Typography
           variant="h4"
           sx={{
