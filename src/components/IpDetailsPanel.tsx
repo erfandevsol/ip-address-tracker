@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { fetchIPDetails } from "@/utils/apiFetch";
-import Map from "./MapContainer";
+import MapContainer from "./MapContainer";
 import {
   Card,
   CardContent,
@@ -10,7 +10,7 @@ import {
   Divider,
 } from "@mui/material";
 
-export default function IPDetails({ query }: { query: string }) {
+export default function IpDetailsPanel({ query }: { query: string }) {
   const { data, error, isLoading } = useQuery(
     ["ipDetails", query],
     () => fetchIPDetails(query),
@@ -21,7 +21,7 @@ export default function IPDetails({ query }: { query: string }) {
   );
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {(error as Error).message}</p>;
+  if (error) alert("Oops! We couldn't find any information for the entered IP address.");
 
   return (
     <Box>
@@ -155,7 +155,7 @@ export default function IPDetails({ query }: { query: string }) {
         </Card>
       </Box>
 
-      <Map lat={data.location.lat} lng={data.location.lng} />
+      <MapContainer lat={data.location.lat} lng={data.location.lng} />
     </Box>
   );
 }

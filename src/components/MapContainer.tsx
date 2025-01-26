@@ -6,7 +6,7 @@ type MapProps = {
   lng: number;
 };
 
-export default function Map({ lat, lng }: MapProps) {
+export default function MapContainer({ lat, lng }: MapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Map({ lat, lng }: MapProps) {
       container: mapContainerRef.current!,
       style: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
       center: [lng, lat],
-      zoom: 10,
+      zoom: 15,
     });
 
     setTimeout(() => {

@@ -83,7 +83,10 @@ export default function SearchForm({
             variant="outlined"
             fullWidth
             InputProps={{
-              sx: { borderRadius: "15px 0 0 15px", padding: "0px 10px" },
+              sx: {
+                borderRadius: "15px 0 0 15px",
+                padding: "0.5px 10px",
+              },
             }}
           />
           <IconButton
@@ -93,7 +96,7 @@ export default function SearchForm({
               backgroundColor: "black",
               color: "white",
               borderRadius: "0 15px 15px 0",
-              padding: "10px 10px",
+              padding: "11px 11px",
             }}
           >
             <ChevronRightIcon fontSize="large" />

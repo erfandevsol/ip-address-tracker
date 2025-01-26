@@ -3,7 +3,9 @@
   "location": {
     "city": "Mountain View",
     "country": "US",
-    "timezone": "-08:00"
+    "timezone": "-08:00",
+    "lat": "35.7219",
+    "lng": "51.3347"
   },
   "isp": "Google LLC"
 }
