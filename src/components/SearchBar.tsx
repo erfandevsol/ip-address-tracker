@@ -29,7 +29,10 @@ export default function SearchForm({
       onSubmit={handleSubmit(handleFormSubmit)}
       sx={{
         height: "100%",
-        backgroundImage: "url('/pattern-bg-desktop.png')",
+        backgroundImage: {
+          xs: "url('/pattern-bg-mobile.png')",
+          sm: "url('/pattern-bg-desktop.png')",
+        },
         backgroundSize: "cover",
         display: "flex",
         alignItems: "center",
@@ -37,13 +40,26 @@ export default function SearchForm({
         position: "relative",
       }}
     >
-      <Box textAlign="center" sx={{ maxWidth: "600px", width: "100%", marginBottom:"60px" }}>
+      <Box
+        textAlign="center"
+        sx={{
+          maxWidth: "600px",
+          width: "100%",
+          marginBottom: "60px",
+          marginInline: "25px",
+        }}
+      >
         <Typography
           variant="h4"
           sx={{
             color: "white",
             fontWeight: "400",
             marginBottom: "20px",
+            fontSize: {
+              xs: "25px",
+              sm: "30px",
+              md: "35px",
+            },
           }}
         >
           IP Address Tracker

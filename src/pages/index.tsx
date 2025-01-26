@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Rubik } from "next/font/google";
 import { useEffect, useState } from "react";
-import SearchForm from "@/components/SearchSection";
-import IPDetails from "@/components/IPDetails";
+import SearchForm from "@/components/SearchBar";
+import IPDetails from "@/components/IpDetailsPanel";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { fetchUserIP } from "@/utils/apiFetch";
 import { Box } from "@mui/material";

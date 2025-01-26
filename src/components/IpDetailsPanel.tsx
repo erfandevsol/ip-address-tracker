@@ -50,7 +50,7 @@ export default function IPDetails({ query }: { query: string }) {
                 sx={{ marginLeft: "50px" }}
               />
             }
-            sx={{ justifyItems: "start", alignItems: "center" }}
+            sx={{ alignItems: "start" }}
           >
             <CardContent sx={{ flex: "1 0 auto" }}>
               <Typography
