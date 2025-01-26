@@ -16,12 +16,13 @@ export default function IpDetailsPanel({ query }: { query: string }) {
     () => fetchIPDetails(query),
     {
       enabled: !!query,
-      staleTime: 60000,
+      staleTime: 1000 * 60 * 5,
     }
   );
 
   if (isLoading) return <p>Loading...</p>;
-  if (error) alert("Oops! We couldn't find any information for the entered IP address.");
+  if (error)
+    alert("Oops! We couldn't find any information for the entered IP address.");
 
   return (
     <Box>

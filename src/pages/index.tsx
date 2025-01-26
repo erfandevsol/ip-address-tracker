@@ -23,7 +23,6 @@ export default function Home() {
         const { ip } = await fetchUserIP();
         setQuery(ip);
       } catch (error) {
-        // console.error("Oops! We couldn't identify your IP address.");
         alert("Oops! We couldn't identify your IP address.")
       }
     };
