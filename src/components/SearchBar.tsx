@@ -45,7 +45,8 @@ export default function SearchForm({
         sx={{
           maxWidth: "600px",
           width: "100%",
-          marginBottom: "60px",
+          marginBottom: { xs: "150px", sm: "60px" },
+          marginTop: { xs: "30px", sm: "0" },
           marginInline: "25px",
         }}
       >

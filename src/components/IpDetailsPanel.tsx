@@ -31,14 +31,17 @@ export default function IPDetails({ query }: { query: string }) {
           justifyItems: "center",
           position: "absolute",
           zIndex: "1",
-          translate: "0 -60px",
+          translate: { xs: "0 -120px", sm: "0 -58px" },
+          paddingInline: { xs: "27px", sm: "0" },
         }}
       >
         <Card
           sx={{
-            padding: 2,
+            width: { xs: "100%", sm: "90%", md: "80%", lg: "70%" },
+            padding: { xs: 1, sm: 2 },
             borderRadius: "15px",
             boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+            overflow: "auto",
           }}
         >
           <Stack
@@ -52,7 +55,13 @@ export default function IPDetails({ query }: { query: string }) {
             }
             sx={{ alignItems: "start" }}
           >
-            <CardContent sx={{ flex: "1 0 auto" }}>
+            <CardContent
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                flex: "1 0 auto",
+                justifyItems: { xs: "center", sm: "start" },
+              }}
+            >
               <Typography
                 variant="subtitle2"
                 component="div"
@@ -70,7 +79,13 @@ export default function IPDetails({ query }: { query: string }) {
               </Typography>
             </CardContent>
 
-            <CardContent sx={{ flex: "1 0 auto" }}>
+            <CardContent
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                flex: "1 0 auto",
+                justifyItems: { xs: "center", sm: "start" },
+              }}
+            >
               <Typography
                 variant="subtitle2"
                 component="div"
@@ -84,11 +99,17 @@ export default function IPDetails({ query }: { query: string }) {
                 component="div"
                 variant="h5"
               >
-                {data.location.city}
+                {data.location.country}, {data.location.city}
               </Typography>
             </CardContent>
 
-            <CardContent sx={{ flex: "1 0 auto" }}>
+            <CardContent
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                flex: "1 0 auto",
+                justifyItems: { xs: "center", sm: "start" },
+              }}
+            >
               <Typography
                 variant="subtitle2"
                 component="div"
@@ -106,7 +127,14 @@ export default function IPDetails({ query }: { query: string }) {
               </Typography>
             </CardContent>
 
-            <CardContent sx={{ flex: "1 0 auto" }}>
+            <CardContent
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                flex: "1 0 auto",
+                justifyItems: { xs: "center", sm: "start" },
+                ":last-child": { paddingBottom: "16px" },
+              }}
+            >
               <Typography
                 variant="subtitle2"
                 component="div"
