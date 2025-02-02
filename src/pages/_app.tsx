@@ -1,7 +1,10 @@
-import QueryClientProvider from "@/QueryClientProvider";
+// This file is the entry point of the nextjs app
+// It wraps the entire app with the ThemeProvider and QueryClientProvider
+
 import type { AppProps } from "next/app";
-import "@/styles/globals.css";
+import QueryClientProvider from "@/QueryClientProvider";
 import { createTheme, ThemeProvider } from "@mui/material";
+import "@/styles/globals.css";
 
 const theme = createTheme({
   typography: {

@@ -11,11 +11,11 @@ type NoticeProps = {
 export default function HandleNotice({ open, message }: NoticeProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = () => {
-    setIsOpen(true);
-  };
-
   useEffect(() => {
+    const handleClick = () => {
+      setIsOpen(true);
+    };
+
     handleClick();
   }, [open]);
 

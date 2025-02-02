@@ -1,6 +1,4 @@
-import { useQuery } from "react-query";
-import { fetchIPDetails } from "@/utils/apiFetch";
-import MapContainer from "./MapContainer";
+// Mui materials
 import {
   Card,
   CardContent,
@@ -10,7 +8,18 @@ import {
   Divider,
 } from "@mui/material";
 
+// React query
+import { useQuery } from "react-query";
+
+// Components
+import MapContainer from "./MapContainer";
+import LoadingProgress from "./LoadingProgress";
+
+// Utils
+import { fetchIPDetails } from "@/utils/apiFetch";
+
 export default function IpDetailsPanel({ query }: { query: string }) {
+  // Get ip details from API using react-query
   const { data, error, isLoading } = useQuery(
     ["ipDetails", query],
     () => fetchIPDetails(query),
@@ -20,12 +29,13 @@ export default function IpDetailsPanel({ query }: { query: string }) {
     }
   );
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingProgress />;
   if (error)
     alert("Oops! We couldn't find any information for the entered IP address.");
 
   return (
     <Box>
+      {/* IP details panel */}
       <Box
         sx={{
           width: "100%",
@@ -76,7 +86,7 @@ export default function IpDetailsPanel({ query }: { query: string }) {
                 component="div"
                 variant="h5"
               >
-                {data.ip}
+                {data.ip ? data.ip : "---"}
               </Typography>
             </CardContent>
 
@@ -100,7 +110,9 @@ export default function IpDetailsPanel({ query }: { query: string }) {
                 component="div"
                 variant="h5"
               >
-                {data.location.country}, {data.location.city}
+                {data.location
+                  ? `${data.location.country}, ${data.location.city}`
+                  : "---"}
               </Typography>
             </CardContent>
 
@@ -124,7 +136,7 @@ export default function IpDetailsPanel({ query }: { query: string }) {
                 component="div"
                 variant="h5"
               >
-                {data.location.timezone}
+                {data.location.timezone ? data.location.timezone : "---"}
               </Typography>
             </CardContent>
 
@@ -149,13 +161,14 @@ export default function IpDetailsPanel({ query }: { query: string }) {
                 component="div"
                 variant="h5"
               >
-                {data.isp}
+                {data.isp ? data.isp : "---"}
               </Typography>
             </CardContent>
           </Stack>
         </Card>
       </Box>
 
+      {/* Map */}
       <MapContainer lat={data.location.lat} lng={data.location.lng} />
     </Box>
   );

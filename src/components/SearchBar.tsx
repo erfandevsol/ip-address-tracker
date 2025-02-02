@@ -1,6 +1,11 @@
-import { useForm } from "react-hook-form";
+// Mui materials
 import { TextField, Box, Typography, IconButton } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
+// React hook form
+import { useForm } from "react-hook-form";
+
+// Form declaration
 type FormValues = {
   query: string;
 };
@@ -10,6 +15,7 @@ export default function SearchForm({
 }: {
   onSubmit: (query: string) => void;
 }) {
+  // react-hook-form hook
   const { register, handleSubmit } = useForm<FormValues>();
 
   const handleFormSubmit = (data: FormValues) => {
@@ -18,6 +24,7 @@ export default function SearchForm({
 
   return (
     <>
+      {/* Form container */}
       <Box
         component="form"
         onSubmit={handleSubmit(handleFormSubmit)}
