@@ -3,7 +3,9 @@ import { TextField, Box, Typography, IconButton } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 // React hook form
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
+import HandleNotice from "./HandleNotice";
+import { useState } from "react";
 
 // Form declaration
 type FormValues = {
@@ -15,12 +17,44 @@ export default function SearchForm({
 }: {
   onSubmit: (query: string) => void;
 }) {
-  // react-hook-form hook
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+  // const [error, setError] = useState<
+  //   { open: boolean; message: string } | false
+  // >();
 
-  const handleFormSubmit = (data: FormValues) => {
+  const ipRegex =
+    /^(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)$/;
+
+  // const handleFormSubmit = (data: FormValues) => {
+  //   if (!ipRegex.test(data.query) && data.query !== "") {
+  //     setError({ open: true, message: "Invalid IP address format" });
+  //   } else {
+  //     setError({ open: false, message: "" });
+  //     onSubmit(data.query);
+  //   }
+  // };
+
+  const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
+    // if (!ipRegex.test(data.query) && data.query !== "") {
+    //   setError({ open: true, message: "Invalid IP address format" });
+    // } else {
+    //   setError({ open: false, message: "" });
+    //   onSubmit(data.query);
+    // }
     onSubmit(data.query);
   };
+
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm<Inputs>();
+  // const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <>
@@ -79,7 +113,7 @@ export default function SearchForm({
             }}
           >
             <TextField
-              {...register("query", { required: true })}
+              {...register("query", { required: true, pattern: ipRegex })}
               placeholder="Search for any IP address or domain"
               variant="outlined"
               fullWidth
@@ -90,6 +124,13 @@ export default function SearchForm({
                 },
               }}
             />
+
+            {errors.query && (
+              <HandleNotice
+                error={{ open: true, message: "Invalid IP address format" }}
+              />
+            )}
+
             <IconButton
               type="submit"
               disableRipple

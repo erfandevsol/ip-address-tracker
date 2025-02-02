@@ -8,16 +8,8 @@ type NoticeProps = {
   message: string;
 };
 
-export default function HandleNotice({ open, message }: NoticeProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleClick = () => {
-      setIsOpen(true);
-    };
-
-    handleClick();
-  }, [open]);
+export default function HandleNotice({ error }: { error: NoticeProps }) {
+  const [isOpen, setIsOpen] = useState(error.open);
 
   const handleClose = (
     event?: SyntheticEvent | Event,
@@ -32,14 +24,14 @@ export default function HandleNotice({ open, message }: NoticeProps) {
 
   return (
     <div>
-      <Snackbar open={isOpen} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={isOpen} autoHideDuration={3000} onClose={handleClose}>
         <Alert
           onClose={handleClose}
           severity="error"
           variant="filled"
           sx={{ width: "100%" }}
         >
-          {message}
+          {error.message}
         </Alert>
       </Snackbar>
     </div>

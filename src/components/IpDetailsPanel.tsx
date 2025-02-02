@@ -17,6 +17,7 @@ import LoadingProgress from "./LoadingProgress";
 
 // Utils
 import { fetchIPDetails } from "@/utils/apiFetch";
+import HandleNotice from "./HandleNotice";
 
 export default function IpDetailsPanel({ query }: { query: string }) {
   // Get ip details from API using react-query
