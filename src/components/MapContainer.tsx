@@ -1,3 +1,5 @@
+"use client";
+
 // React hooks
 import { useEffect, useRef } from "react";
 

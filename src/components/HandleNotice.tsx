@@ -1,8 +1,13 @@
-import Button from "@mui/material/Button";
+"use client";
+
+// React imports
+import { SyntheticEvent, useState } from "react";
+
+// Mui materials
 import Snackbar, { SnackbarCloseReason } from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import { SyntheticEvent, useEffect, useState } from "react";
 
+// Types declaration
 type NoticeProps = {
   open: boolean;
   message: string;
@@ -11,6 +16,7 @@ type NoticeProps = {
 export default function HandleNotice({ error }: { error: NoticeProps }) {
   const [isOpen, setIsOpen] = useState(error.open);
 
+  // Function to close the snackbar
   const handleClose = (
     event?: SyntheticEvent | Event,
     reason?: SnackbarCloseReason
@@ -18,7 +24,6 @@ export default function HandleNotice({ error }: { error: NoticeProps }) {
     if (reason === "clickaway") {
       return;
     }
-
     setIsOpen(false);
   };
 

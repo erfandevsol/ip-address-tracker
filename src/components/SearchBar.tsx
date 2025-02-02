@@ -1,11 +1,14 @@
+"use client";
+
 // Mui materials
 import { TextField, Box, Typography, IconButton } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 // React hook form
 import { SubmitHandler, useForm } from "react-hook-form";
+
+// Components
 import HandleNotice from "./HandleNotice";
-import { useState } from "react";
 
 // Form declaration
 type FormValues = {
@@ -22,39 +25,13 @@ export default function SearchForm({
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
-  // const [error, setError] = useState<
-  //   { open: boolean; message: string } | false
-  // >();
 
   const ipRegex =
     /^(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|1?[0-9][0-9]?)$/;
 
-  // const handleFormSubmit = (data: FormValues) => {
-  //   if (!ipRegex.test(data.query) && data.query !== "") {
-  //     setError({ open: true, message: "Invalid IP address format" });
-  //   } else {
-  //     setError({ open: false, message: "" });
-  //     onSubmit(data.query);
-  //   }
-  // };
-
   const handleFormSubmit: SubmitHandler<FormValues> = (data) => {
-    // if (!ipRegex.test(data.query) && data.query !== "") {
-    //   setError({ open: true, message: "Invalid IP address format" });
-    // } else {
-    //   setError({ open: false, message: "" });
-    //   onSubmit(data.query);
-    // }
     onSubmit(data.query);
   };
-
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm<Inputs>();
-  // const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <>

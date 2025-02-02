@@ -1,3 +1,5 @@
+"use client";
+
 // Nextjs components
 import Head from "next/head";
 import { Rubik } from "next/font/google";
