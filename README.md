@@ -4,45 +4,53 @@ A web application that allows users to track the geographical location of any IP
 It provides detailed information such as city, country, timezone, and ISP, along with an interactive map visualization.
 
 ## ▶️ Preview
+
 ![IP Address Tracker Preview](./public/assets/screenshot-1.png)
 
-## 🚀 Features  
+## 🚀 Features
 
-### 📌 IP Tracking  
-- 🔍 **Search any IP address** and get real-time location data  
-- 🌎 **Automatically detects user's own IP address** on page load  
+### 📌 IP Tracking
 
-### 📊 Detailed Information  
-- 🏙 **City & Country**  
-- 🕒 **Timezone**  
-- 🏢 **Internet Service Provider (ISP)**  
+- 🔍 **Search any IP address** and get real-time location data
+- 🌎 **Automatically detects user's own IP address** on page load
 
-### 🗺 Interactive Map  
-- 🗺 **Displays IP location on an interactive map** using **MapLibre**  
-- 🔄 **Supports zoom and pan for better exploration**  
+### 📊 Detailed Information
 
-### 💎 User Experience  
-- ✅ **Fully responsive** design for mobile & desktop  
-- ⚡ **Fast and efficient performance** using **React Query**  
-- ❌ **Error handling** for invalid or unreachable IP addresses  
-- 🎨 **Modern UI built with MUI (Material-UI)**  
+- 🏙 **City & Country**
+- 🕒 **Timezone**
+- 🏢 **Internet Service Provider (ISP)**
 
-## ⚙️ Installation & Setup  
+### 🗺 Interactive Map
 
-Follow these steps to install and run the project locally:  
+- 🗺 **Displays IP location on an interactive map** using **MapLibre**
+- 🔄 **Supports zoom and pan for better exploration**
 
-### 1️⃣ Clone the repository  
+### 💎 User Experience
+
+- ✅ **Fully responsive** design for mobile & desktop
+- ⚡ **Fast and efficient performance** using **React Query**
+- ❌ **Error handling** for invalid or unreachable IP addresses
+- 🎨 **Modern UI built with MUI (Material-UI)**
+
+## ⚙️ Installation & Setup
+
+Follow these steps to install and run the project locally:
+
+### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/ip-address-tracker.git
 cd ip-address-tracker
 ```
 
 ### 2️⃣ Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 3️⃣ Run the development server
+
 ```bash
 npm run dev
 ```
