@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🌍 IP Address Tracker
 
-## Getting Started
+A web application that allows users to track the geographical location of any IP address in real-time.  
+It provides detailed information such as city, country, timezone, and ISP, along with an interactive map visualization.
 
-First, run the development server:
+## ▶️ Preview
+![IP Address Tracker Preview](./public/assets/screenshot-1.png)
 
+## 🚀 Features  
+
+### 📌 IP Tracking  
+- 🔍 **Search any IP address** and get real-time location data  
+- 🌎 **Automatically detects user's own IP address** on page load  
+
+### 📊 Detailed Information  
+- 🏙 **City & Country**  
+- 🕒 **Timezone**  
+- 🏢 **Internet Service Provider (ISP)**  
+
+### 🗺 Interactive Map  
+- 🗺 **Displays IP location on an interactive map** using **MapLibre**  
+- 🔄 **Supports zoom and pan for better exploration**  
+
+### 💎 User Experience  
+- ✅ **Fully responsive** design for mobile & desktop  
+- ⚡ **Fast and efficient performance** using **React Query**  
+- ❌ **Error handling** for invalid or unreachable IP addresses  
+- 🎨 **Modern UI built with MUI (Material-UI)**  
+
+## ⚙️ Installation & Setup  
+
+Follow these steps to install and run the project locally:  
+
+### 1️⃣ Clone the repository  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/ip-address-tracker.git
+cd ip-address-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Run the development server
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+🚀 The project will be available at http://localhost:3000
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## 🪛 Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ⚛️ **React** : A JavaScript library for building dynamic and complex user interfaces.
+- 📦 **Next.js** : A React framework for building fast, scalable web applications with features like SSR (Server-Side Rendering) and Static Site Generation.
+- 🎨 **MUI (Material UI)** : A collection of React components based on Material Design principles for creating modern and customizable UI.
+- 🔍 **React-Query** : A library for managing HTTP requests and data caching with high performance.
+- 📋 **React-Hook-Form** : A library for managing forms in React with minimal boilerplate and high performance.
+- 🗺️ **MapLibre** : A mapping library for creating interactive, customizable maps in web applications.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 🎉 Enjoy using it.
