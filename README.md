@@ -3,6 +3,8 @@
 A web application that allows users to track the geographical location of any IP address in real-time.  
 It provides detailed information such as city, country, timezone, and ISP, along with an interactive map visualization.
 
+🔗 **Live Demo:** [IP Founder](https://ip-founder.netlify.app)
+
 ## ▶️ Preview
 
 ![IP Address Tracker Preview](./public/assets/screenshot-1.png)
@@ -16,13 +18,13 @@ It provides detailed information such as city, country, timezone, and ISP, along
 
 ### 📊 Detailed Information
 
-- 🏙 **City & Country**
+- 🏩 **City & Country**
 - 🕒 **Timezone**
 - 🏢 **Internet Service Provider (ISP)**
 
 ### 🗺 Interactive Map
 
-- 🗺 **Displays IP location on an interactive map** using **MapLibre**
+- 🏞 **Displays IP location on an interactive map** using **MapLibre**
 - 🔄 **Supports zoom and pan for better exploration**
 
 ### 💎 User Experience
@@ -31,33 +33,6 @@ It provides detailed information such as city, country, timezone, and ISP, along
 - ⚡ **Fast and efficient performance** using **React Query**
 - ❌ **Error handling** for invalid or unreachable IP addresses
 - 🎨 **Modern UI built with MUI (Material-UI)**
-
-## ⚙️ Installation & Setup
-
-Follow these steps to install and run the project locally:
-
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/ErfanJebely/ip-address-tracker.git
-```
-```bash
-cd ip-address-tracker
-```
-
-### 2️⃣ Install dependencies
-
-```bash
-npm install
-```
-
-### 3️⃣ Run the development server
-
-```bash
-npm run dev
-```
-
-🚀 The project will be available at http://localhost:3000
 
 ## 🪛 Technologies Used
 
@@ -68,4 +43,4 @@ npm run dev
 - 📋 **React-Hook-Form** : A library for managing forms in React with minimal boilerplate and high performance.
 - 🗺️ **MapLibre** : A mapping library for creating interactive, customizable maps in web applications.
 
-### 🎉 Enjoy using it.
+### 🎉 Enjoy using it!
