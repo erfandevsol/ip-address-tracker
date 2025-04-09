@@ -40,6 +40,8 @@ Follow these steps to install and run the project locally:
 
 ```bash
 git clone https://github.com/ErfanJebely/ip-address-tracker.git
+```
+```bash
 cd ip-address-tracker
 ```
 
