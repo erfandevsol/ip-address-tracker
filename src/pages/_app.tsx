@@ -2,9 +2,9 @@
 // It wraps the entire app with the ThemeProvider and QueryClientProvider
 
 import type { AppProps } from "next/app";
-import QueryClientProvider from "../../src/QueryClientProvider";
 import { createTheme, ThemeProvider } from "@mui/material";
 import "@/styles/globals.css";
+import CustomQueryClientProvider from "@/QueryProvider";
 
 const theme = createTheme({
   typography: {
@@ -15,9 +15,9 @@ const theme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <QueryClientProvider>
+      <CustomQueryClientProvider>
         <Component {...pageProps} />
-      </QueryClientProvider>
+      </CustomQueryClientProvider>
     </ThemeProvider>
   );
 }
