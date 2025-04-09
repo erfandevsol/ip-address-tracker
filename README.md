@@ -39,7 +39,7 @@ Follow these steps to install and run the project locally:
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ip-address-tracker.git
+git clone https://github.com/ErfanJebely/ip-address-tracker.git
 cd ip-address-tracker
 ```
 
